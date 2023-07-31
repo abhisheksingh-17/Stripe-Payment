@@ -30,7 +30,7 @@ This project aims to serve as a starting point for developers looking to impleme
 **4.Set up your Stripe API key:**
 
 Replace "my api key" in the app.py file with your actual Stripe API key. You can obtain the API key from your Stripe dashboard-https://dashboard.stripe.com/test/apikeys
-## Usage
+## Deployment
 
 **1.Run the Flask development server:**
 ```bash
@@ -126,9 +126,11 @@ The templates use Font Awesome icons via the link to the Font Awesome kit (https
 ## Acknowledgements
 I would like to express my sincere gratitude to the following individuals and resources for their valuable contributions and support during the development of this project:
 
-**1.Stripe:** I am thankful to Stripe for providing an excellent payment processing platform and comprehensive documentation that made integrating payments into this project straightforward.(https://stripe.com/docs/api)
+**1.Stripe:** I am thankful to Stripe for providing an excellent payment processing platform and comprehensive documentation that made integrating payments into this project straightforward.  
+https://stripe.com/docs/api
 
-**2.Font Awesome:** The provided templates utilize Font Awesome icons, adding visual elements to the application and enhancing the user experience.(https://fontawesome.com)
+**2.Font Awesome:** The provided templates utilize Font Awesome icons, adding visual elements to the application and enhancing the user experience.
+https://fontawesome.com
 
 **3.Open Source Community:** I extend my thanks to the open-source community for their contributions to the Flask framework and related libraries, making this project possible.
 ## Future Scope
