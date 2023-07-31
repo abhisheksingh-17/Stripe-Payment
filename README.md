@@ -160,21 +160,21 @@ The code begins by importing the necessary modules: stripe for interacting with 
 
  - Templates (checkout.html, success.html, cancel.html)
 
-The provided templates are simple HTML files that define the frontend layout and content for the application.
+   The provided templates are simple HTML files that  define the frontend layout and content for the  application.
 
-**checkout.html:** This template contains a form with a single "Checkout" button. When users click the button, it initiates the /create-checkout-session POST request to start the Stripe checkout process.
+ - checkout.html: This template contains a form with a single "Checkout" button. When users click the button, it initiates the /create-checkout-session POST request to start the Stripe checkout process.
 
-**success.html:** This template displays a "Payment Successful" message and informs the user that their subscription has been successfully established. It uses Font Awesome icons for visual elements.
+ - success.html: This template displays a "Payment Successful" message and informs the user that their subscription has been successfully established. It uses Font Awesome icons for visual elements.
 
-**cancel.html:** This template displays a "Payment Failed" message and encourages users to revisit the website to complete their purchase if their payment was canceled. It also utilizes Font Awesome icons for visual elements.
+ - cancel.html: This template displays a "Payment Failed" message and encourages users to revisit the website to complete their purchase if their payment was canceled. It also utilizes Font Awesome icons for visual elements.
 
  - Styling (CSS)
 
-The CSS styles for the templates are embedded within the <style> tags in each template file.
+ - The CSS styles for the templates are embedded within the <style> tags in each template file.
 
-The CSS defines the layout and appearance of the application's elements, including background images, button styles, font sizes, and positioning.
+ - The CSS defines the layout and appearance of the application's elements, including background images, button styles, font sizes, and positioning.
 
-The templates use Font Awesome icons via the link to the Font Awesome kit. https://kit.fontawesome.com/92d70a2fd8.js
+ - The templates use Font Awesome icons via the link to the Font Awesome kit. https://kit.fontawesome.com/92d70a2fd8.js
 ## Screenshots
 
 
