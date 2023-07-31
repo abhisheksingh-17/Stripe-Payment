@@ -99,7 +99,7 @@ The CSS styles for the templates are embedded within the <style> tags in each te
 
 The CSS defines the layout and appearance of the application's elements, including background images, button styles, font sizes, and positioning.
 
-The templates use Font Awesome icons via the link to the Font Awesome kit (https://kit.fontawesome.com/92d70a2fd8.js)
+The templates use Font Awesome icons via the link to the Font Awesome kit. https://kit.fontawesome.com/92d70a2fd8.js
 ## Screenshots
 
 
