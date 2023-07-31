@@ -92,7 +92,7 @@ The "Stripe Payment Integration with Flask" project utilizes the following techn
  - GitHub: GitHub serves as the code repository and collaboration platform for the project.
 ## Code Explanation
 
- - app.py
+  1.app.py
 
 ```python
 # Import required modules
@@ -158,7 +158,7 @@ Explanation-
  - If the checkout session is successfully created, the user is redirected to the Stripe checkout page using redirect(...). The checkout_session.url contains the URL provided by Stripe for the checkout session.
 The code begins by importing the necessary modules: stripe for interacting with the Stripe API and Flask and redirect from the flask package for building the web application.
 
- - Templates (checkout.html, success.html, cancel.html)
+  2.Templates (checkout.html, success.html, cancel.html)
 
    The provided templates are simple HTML files that  define the frontend layout and content for the  application.
 
@@ -168,7 +168,7 @@ The code begins by importing the necessary modules: stripe for interacting with 
 
  - cancel.html: This template displays a "Payment Failed" message and encourages users to revisit the website to complete their purchase if their payment was canceled. It also utilizes Font Awesome icons for visual elements.
 
- - Styling (CSS)
+  3.Styling (CSS)
 
  - The CSS styles for the templates are embedded within the <style> tags in each template file.
 
