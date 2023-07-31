@@ -1,4 +1,5 @@
 
+![](https://images.ctfassets.net/fzn2n1nzq965/6JEjxpwMd1OIIk6RosReNU/3d5c5f5217a7cce4af750ebfe599b6fc/Payments-social-card.png?q=80)
 # Stripe Payment
 
 The "Stripe Payment" project demonstrates the seamless integration of the Stripe payment functionality into a Flask web application. Stripe is a widely used online payment processing platform that enables businesses and individuals to securely accept online payments.
@@ -12,6 +13,16 @@ The project provides basic templates (checkout.html, success.html, and cancel.ht
 This project aims to serve as a starting point for developers looking to implement subscription-based payment systems with Stripe in their Flask applications. It also presents opportunities for future enhancements, such as user authentication, subscription plan management, and automated testing.
 
 
+## Table Of Contents
+ - Installation
+ - Deployment
+ - Acknowledgements
+ - Technologies Used
+ - Code Explanation
+ - Screenshots
+ - Future Scope
+ - Contributing
+ - License
 ## Installation
 
 **1.Clone the repository or download the source code-** https://github.com/abhisheksingh-17/Stripe-Payment.git
@@ -48,6 +59,17 @@ Click the "Checkout" button on the home page to initiate a checkout session. You
 
 After completing the payment, you will be redirected to the success page (success.html) if the payment is successful or the cancel page (cancel.html) if the payment is canceled.
 
+
+## Acknowledgements
+I would like to express my sincere gratitude to the following individuals and resources for their valuable contributions and support during the development of this project:
+
+**1.Stripe:** I am thankful to Stripe for providing an excellent payment processing platform and comprehensive documentation that made integrating payments into this project straightforward.  
+https://stripe.com/docs/api
+
+**2.Font Awesome:** The provided templates utilize Font Awesome icons, adding visual elements to the application and enhancing the user experience.
+https://fontawesome.com
+
+**3.Open Source Community:** I extend my thanks to the open-source community for their contributions to the Flask framework and related libraries, making this project possible.
 ## Technologies Used
 
 The "Stripe Payment Integration with Flask" project utilizes the following technologies:
@@ -71,17 +93,69 @@ The "Stripe Payment Integration with Flask" project utilizes the following techn
 
 **1.app.py**
 
-The app.py file is the main Flask application file that handles the web application's backend logic and routes.
+```python
+# Import required modules
+import stripe
+from flask import Flask, redirect
 
-The Flask app is initialized using Flask(__name__), and the static and template folders are specified for the application.
+# Create a Flask application
+app = Flask(__name__, static_url_path="", static_folder="public")
 
-The Stripe API key is set using stripe.api_key = "my api key". Replace "my api key" with your actual Stripe API key obtained from the Stripe dashboard.
+# Set the Stripe API key
+stripe.api_key = "my api key"
 
-The /create-checkout-session route is defined to handle the creation of a new Stripe checkout session when the user clicks the "Checkout" button.
+# Define the base URL for redirecting after payment
+YOUR_DOMAIN = "http://localhost:5000"
 
-In the create_checkout_session() function, a new Stripe checkout session is created using the stripe.checkout.Session.create() method. The line_items parameter specifies the product price and quantity for the checkout session. The mode is set to "subscription" to enable subscription-based payments.
+```
+Explanation-
 
-Upon successful creation of the checkout session, the user is redirected to the Stripe checkout page to complete the payment process.
+- The code begins by importing the necessary modules: stripe for interacting with the Stripe API and Flask and redirect from the flask package for building the web application.
+
+ - A Flask application object is created, and the static_url_path and static_folder parameters are set. This configuration enables the Flask application to serve static files from the "public" folder.
+
+ - The Stripe API key is set using the stripe.api_key attribute. Replace "my api key" with your actual Stripe API key obtained from the Stripe dashboard.
+
+ - The YOUR_DOMAIN variable is defined, which stores the base URL for redirecting users after successful or canceled payments.
+
+``` python
+@app.route('/create-checkout-session', methods=['POST'])
+def create_checkout_session():
+    try:
+        # Create a new Stripe checkout session
+        checkout_session = stripe.checkout.Session.create(
+            line_items=[
+                {
+                    'price': 'price_1NPldASGBvo3mDx5SlAdoX0t',
+                    'quantity': 1
+                }
+            ],
+            mode="subscription",
+            success_url=YOUR_DOMAIN + "/success.html",
+            cancel_url=YOUR_DOMAIN + "/cancel.html"
+        )
+
+    except Exception as e:
+        return str(e)
+
+    # Redirect the user to the Stripe checkout page
+    return redirect(checkout_session.url, code=303)
+
+```
+Explanation-
+
+ - The create_checkout_session function is a route handler that is triggered when a POST request is made to the /create-checkout-session endpoint.
+
+ - Inside the function, a new Stripe checkout session is created using stripe.checkout.Session.create(...). It specifies the line items for the checkout, in this case, a single item with the given price ID ('price_1NPldASGBvo3mDx5SlAdoX0t') and a quantity of 1.
+
+ - The checkout session's mode is set to "subscription", indicating that it's a subscription-based payment.
+
+ - The success_url and cancel_url parameters define the URLs where Stripe will redirect the user after successful payment or if the payment is canceled. These URLs are concatenated with the YOUR_DOMAIN variable.
+
+ - In case an exception occurs during the creation of the checkout session, the error message is returned as a response.
+
+ - If the checkout session is successfully created, the user is redirected to the Stripe checkout page using redirect(...). The checkout_session.url contains the URL provided by Stripe for the checkout session.
+The code begins by importing the necessary modules: stripe for interacting with the Stripe API and Flask and redirect from the flask package for building the web application.
 
 **2.Templates (checkout.html, success.html, cancel.html)**
 
@@ -123,18 +197,8 @@ The templates use Font Awesome icons via the link to the Font Awesome kit. https
 
 **Payment Dashboard-**
 ![](https://github.com/abhisheksingh-17/Stripe-Payment/blob/main/Results/8.png?raw=true)
-## Acknowledgements
-I would like to express my sincere gratitude to the following individuals and resources for their valuable contributions and support during the development of this project:
-
-**1.Stripe:** I am thankful to Stripe for providing an excellent payment processing platform and comprehensive documentation that made integrating payments into this project straightforward.  
-https://stripe.com/docs/api
-
-**2.Font Awesome:** The provided templates utilize Font Awesome icons, adding visual elements to the application and enhancing the user experience.
-https://fontawesome.com
-
-**3.Open Source Community:** I extend my thanks to the open-source community for their contributions to the Flask framework and related libraries, making this project possible.
 ## Future Scope
-The "Stripe Payment Integration with Flask" project provides a solid foundation for a subscription-based payment system. Here are some potential areas for future enhancement and expansion:
+The "Stripe Payment" project provides a solid foundation for a subscription-based payment system. Here are some potential areas for future enhancement and expansion:
 
 **1.User Authentication-**
 Currently, the application allows any user to initiate a checkout session. Implementing user authentication and registration will enable personalized subscriptions and better user management.
@@ -165,3 +229,26 @@ Extend support for multiple languages and currencies to make the application mor
 
 **10.Automated Testing-**
 Implement automated testing to ensure the application's robustness and prevent regressions.
+## Contributing
+
+Contributions to the "Stripe Payment" project are welcome and encouraged! If you have any ideas, bug fixes, or enhancements, please follow these steps:
+
+ - Fork the repository on GitHub.
+
+ - Create a new branch for your feature or bug fix: git checkout -b my-feature.
+
+ - Make your changes, commit them, and push the changes to your forked repository.
+
+ - Submit a pull request to the main branch of the original repository.
+
+ - Your pull request will be reviewed by the maintainers, and any necessary feedback will be provided.
+
+ - Once your pull request is approved, it will be merged into the main branch.
+
+Thank you for your contributions!
+
+
+
+## License
+
+The "Stripe Payment" project is licensed under the MIT License. See the LICENSE file for more details.

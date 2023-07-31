@@ -3,7 +3,7 @@ from flask import Flask, redirect
 
 app = Flask(__name__, static_url_path="", static_folder="public")
 
-stripe.api_key = "sk_test_51NOaTjSGBvo3mDx5txKIc9aXu99D6OOmOVTTPaNlSPjMb1s0FFokt1Dy9sH51tN7Abfk95r9QkWax04E42pqURLN00cI0WDaTO"
+stripe.api_key = "" # my api key
 
 YOUR_DOMAIN = "http://localhost:5000"
 
