@@ -41,7 +41,7 @@ This project aims to serve as a starting point for developers looking to impleme
 ```
 **4.Set up your Stripe API key:**
 
-Replace "my api key" in the app.py file with your actual Stripe API key. You can obtain the API key from your Stripe dashboard-https://dashboard.stripe.com/test/apikeys
+Replace "Your api key" in the app.py file with your actual Stripe API key. You can obtain the API key from your Stripe dashboard-https://dashboard.stripe.com/test/apikeys
 ## Deployment
 
 **1.Run the Flask development server:**
