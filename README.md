@@ -103,7 +103,7 @@ from flask import Flask, redirect
 app = Flask(__name__, static_url_path="", static_folder="public")
 
 # Set the Stripe API key
-stripe.api_key = "my api key"
+stripe.api_key = "" # Your Api key 
 
 # Define the base URL for redirecting after payment
 YOUR_DOMAIN = "http://localhost:5000"
