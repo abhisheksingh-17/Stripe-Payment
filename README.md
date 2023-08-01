@@ -15,7 +15,7 @@ This project aims to serve as a starting point for developers looking to impleme
 
 ## Table Of Contents
  - [Installation](https://github.com/abhisheksingh-17/Stripe-Payment#installation)
- - [Usage](https://github.com/abhisheksingh-17/Stripe-Payment#deployment)
+ - [Usage](https://github.com/abhisheksingh-17/Stripe-Payment#usage)
  - [Acknowledgements](https://github.com/abhisheksingh-17/Stripe-Payment#acknowledgements)
  - [Technologies Used](https://github.com/abhisheksingh-17/Stripe-Payment#technologies-used)
  - [Code Explanation](https://github.com/abhisheksingh-17/Stripe-Payment#code-explanation)
