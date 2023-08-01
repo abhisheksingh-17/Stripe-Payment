@@ -1,7 +1,6 @@
+# Stripe Payment
 
 ![](https://images.ctfassets.net/fzn2n1nzq965/6JEjxpwMd1OIIk6RosReNU/3d5c5f5217a7cce4af750ebfe599b6fc/Payments-social-card.png?q=80)
-
-# Stripe Payment
 
 The "Stripe Payment" project demonstrates the seamless integration of the Stripe payment functionality into a Flask web application. Stripe is a widely used online payment processing platform that enables businesses and individuals to securely accept online payments.
 
@@ -16,7 +15,7 @@ This project aims to serve as a starting point for developers looking to impleme
 
 ## Table Of Contents
  - [Installation](https://github.com/abhisheksingh-17/Stripe-Payment#installation)
- - [Deployment](https://github.com/abhisheksingh-17/Stripe-Payment#deployment)
+ - [Usage](https://github.com/abhisheksingh-17/Stripe-Payment#deployment)
  - [Acknowledgements](https://github.com/abhisheksingh-17/Stripe-Payment#acknowledgements)
  - [Technologies Used](https://github.com/abhisheksingh-17/Stripe-Payment#technologies-used)
  - [Code Explanation](https://github.com/abhisheksingh-17/Stripe-Payment#code-explanation)
@@ -42,7 +41,7 @@ This project aims to serve as a starting point for developers looking to impleme
 **4.Set up your Stripe API key:**
 
 Replace "Your api key" in the app.py file with your actual Stripe API key. You can obtain the API key from your Stripe dashboard-https://dashboard.stripe.com/test/apikeys
-## Deployment
+## Usage
 
 **1.Run the Flask development server:**
 ```bash
